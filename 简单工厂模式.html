@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .red{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+<script>
+window.$ = function(selector) {
+    return new jQuery(selector)
+}
+class jQuery {
+    constructor(selector) {
+        let elements = Array.from(document.querySelectorAll(selector))
+        let length = elements ? elements.length : 0
+        for(let i = 0;i<length;i++){
+            this[i] = elements[i]
+        }
+        this.length = length
+    }
+    html() {
+        return this[0].innerHTML
+    }
+    addClass(cls) {
+        for(let i = 0;i<this.length;i++){
+            this[i].className = cls
+        }
+    }
+}
+let length = $('li').length
+let html = $('li').html()
+$('li').addClass('red')
+console.log(length)
+console.log(html)
+console.log($('li'))
+</script>
+</html>
