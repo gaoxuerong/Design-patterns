@@ -9,14 +9,34 @@
 </head>
 <body>
     <nav class="top-bar">
-        <div class="top-bar_left">
-          LTH BLOG
+      <div class="top-bar_left">
+        LTH BLOG
+      </div>
+      <div class="top-bar_right">
+        <div class="login-btn">登陆</div>
+        <div class="signin-btn">注册</div>
+      </div>
+    </div>
+    </nav>
+    <div class="mask">
+      <div class="login-wrapper mask-layer">
+        <div class="login-title">
+        <div class="title-text">登录框</div>
+        <div class="close-btn">×</div>
         </div>
-        <div class="top-bar_right">
-          <div class="login-btn">登陆</div>
-          <div class="signin-btn">注册</div>
+        <div class="username-input user-input">
+        <span class="login-text">用户名:</span>
+        <input type="text">
         </div>
-      </nav>
+        <div class="pwd-input user-input">
+        <span class="login-text">密码:</span>
+        <input type="password">
+        </div>
+        <div class="btn-wrapper">
+        <button class="confrim-btn">确定</button>
+        <button class="clear-btn">清空</button>
+      </div>
+    </div>
 </body>
 <script src="./login.js"></script>
 </html>

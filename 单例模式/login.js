@@ -1,15 +1,23 @@
-class Login{
+class Login {
+    constructor() {
+        this.instance = null
+        this.init()
+    }
+    init() {
+        document.querySelector('.mask').style = 'display: block';
+    }
     static querySlect(options) {
         return document.querySelector(options);
     }
     static getInstance() {
-        if(!instance){
-            return new Login.getInstance()
+        if (!this.instance) {
+            this.instance = new Login()
         } else {
-            return new Login.getInstance()
+            document.querySelector('.mask').style = 'display: none';
         }
+        return this.instance
     }
 }
-Login.querySlect('.login-btn').addEventListener('click',function(){
-    Login.getInstance().show()
+Login.querySlect('.login-btn').addEventListener('click', function () {
+    Login.getInstance()
 })
